@@ -7,8 +7,29 @@
     <link rel="stylesheet" href="./style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body>
-    welcome
+  <body class="bg-[#F4F5F7]">
+
+    <section class="h-[100vh] flex flex-col justify-center items-center"> 
+        <div class="w-[316px] h-[150px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+            <img src="./assets/Group.png" alt="">
+        </div>
+
+        <form class="bg-white rounded-xl p-7 w-[350px]">
+        <div>
+            <label class="font-semibold ">Mobile Number</label>
+            <br>
+            <input type="text"  id="phn" class="rounded-3xl p-3 bg-[#F4F5F7] mt-2 mb-2 w-full" placeholder="Enter your number">
+        </div>
+        <div>
+            <label class="font-semibold">4 Digit Pin</label>
+            <br>
+            <input type="text"  id="pin" class="rounded-3xl p-3 bg-[#F4F5F7] mt-2 mb-2 w-full" placeholder="Enter your number">
+        </div>
+
+        <button id="btn" class="w-full bg-blue-600 text-white rounded-3xl p-3">Login</button>
+    </form>
+    </section>
+    
     <script src="./script.js"></script>
   </body>
 </html>

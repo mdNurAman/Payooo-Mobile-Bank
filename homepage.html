@@ -28,7 +28,9 @@
         <div class="left flex items-center">
           <img src="./assets/Group.png" class="h-[40px]" alt="" />
           <div>
-            <h1 class="font-extrabold text-[18px]">$<span>45000</span></h1>
+            <h1 class="font-extrabold text-[18px]">
+              $<span id="balance">45000</span>
+            </h1>
             <p class="text-[14px] text-gray-500">Available Balance</p>
           </div>
         </div>
@@ -58,11 +60,17 @@
       <div
         class="max-w-lg mx-auto card-container grid grid-cols-3 gap-4 pl-5 pr-5 pt-3 pb-5"
       >
-        <div class="h-[90px] card border-1 border-gray-300 rounded-xl p-3">
+        <div
+          id="add-money"
+          class="h-[90px] card border-1 border-gray-300 rounded-xl p-3"
+        >
           <img src="./assets/wallet1.png" class="w-[24px] mx-auto" alt="" />
           <h1 class="text-center text-[14px] text-gray-600 mt-2">Add Money</h1>
         </div>
-        <div class="h-[90px] card border-1 border-gray-300 rounded-xl p-3">
+        <div
+          id="cash-out"
+          class="h-[90px] card border-1 border-gray-300 rounded-xl p-3"
+        >
           <img src="./assets/send1.png" class="w-[24px] mx-auto" alt="" />
           <h1 class="text-center text-[14px] text-gray-600 mt-2">Cashout</h1>
         </div>
@@ -97,31 +105,98 @@
 
     <!-- forms -->
     <section class="max-w-lg mx-auto p-5">
-      <h1 class="text-[18px] font-semibold pb-2">Add Money</h1>
+      <!-- add money -->
+      <div id="add-money-parent">
+        <h1 class="text-[18px] font-semibold pb-2">Add Money</h1>
 
-      <div class="bg-white rounded-xl p-5">
-        <form>
-          <h1 class="font-semibold">Select A Bank</h1>
+        <div class="bg-white rounded-xl p-5">
+          <form>
+            <h1 class="font-semibold">Select A Bank</h1>
 
-          <select class="select select-ghost mt-3 bg-[#f4f4f4] w-full rounded-2xl">
-            <option class="text-gray-400">Pick a font</option>
-            <option>AB Bank</option>
-            <option>Brac Bank</option>
-            <option>IFIC Bank</option>
-          </select>
+            <select
+              name="a"
+              class="select select-ghost mt-3 bg-[#f4f4f4] w-full rounded-2xl"
+            >
+              <option class="text-gray-400">Pick a Bank</option>
+              <option>AB Bank</option>
+              <option>Brac Bank</option>
+              <option>IFIC Bank</option>
+            </select>
 
-          <h1 class="font-semibold mt-2 mb-2">Bank Account Number</h1>
-          <input type="text" class="w-full rounded-2xl p-2 bg-[#f4f4f4] border-0" id="" placeholder="Enter 11 digit account number">
+            <h1 class="font-semibold mt-2 mb-2">Bank Account Number</h1>
+            <input
+              type="text"
+              class="w-full rounded-2xl p-2 bg-[#f4f4f4] border-0"
+              id=""
+              placeholder="Enter 11 digit account number"
+            />
 
-          <h1 class="font-semibold mt-2 mb-2">Ammount To Add</h1>
-          <input type="text" class="w-full rounded-2xl p-2 bg-[#f4f4f4] border-0" id="" placeholder="Add Amount to withdraw">
+            <h1 class="font-semibold mt-2 mb-2">Ammount To Add</h1>
+            <input
+              type="text"
+              class="w-full rounded-2xl p-2 bg-[#f4f4f4] border-0"
+              id="add-ammount"
+              placeholder="Add Amount to withdraw"
+            />
 
-          <h1 class="font-semibold mt-2 mb-2">Pin Number</h1>
-          <input type="text" class="w-full rounded-2xl p-2 bg-[#f4f4f4] border-0" id="" placeholder="Enter 4 digit pin number">
+            <h1 class="font-semibold mt-2 mb-2">Pin Number</h1>
+            <input
+              type="text"
+              class="w-full rounded-2xl p-2 bg-[#f4f4f4] border-0"
+              id=""
+              placeholder="Enter 4 digit pin number"
+            />
 
-          <button id="btn" class="w-full bg-blue-600 text-white rounded-3xl p-2 mt-3">Add Money</button>
-        </form>
+            <button
+              id="add-money-btn"
+              class="w-full bg-blue-600 text-white rounded-3xl p-2 mt-3"
+            >
+              Add Money
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div id="cash-out-parent" class="hidden">
+        <h1 class="text-[18px] font-semibold pb-2">Cash Out</h1>
+
+        <div class="bg-white rounded-xl p-5">
+          <form>
+            <h1 class="font-semibold mt-2 mb-2">Agent Number</h1>
+            <input
+              type="text"
+              class="w-full rounded-2xl p-2 bg-[#f4f4f4] border-0"
+              id=""
+              placeholder="Enter 11 digit number"
+            />
+
+            <h1 class="font-semibold mt-2 mb-2">Ammount</h1>
+            <input
+              type="text"
+              class="w-full rounded-2xl p-2 bg-[#f4f4f4] border-0"
+              id="withdraw-ammount"
+              placeholder="Enter Amount to withdraw"
+            />
+
+            <h1 class="font-semibold mt-2 mb-2">Pin Number</h1>
+            <input
+              type="text"
+              class="w-full rounded-2xl p-2 bg-[#f4f4f4] border-0"
+              id=""
+              placeholder="Enter 4 digit pin number"
+            />
+
+            <button
+              id="withdraw-btn"
+              class="w-full bg-blue-600 text-white rounded-3xl p-2 mt-3"
+            >
+              Withdraw Money
+            </button>
+          </form>
+        </div>
       </div>
     </section>
+
+    <script src="./home.js"></script>
   </body>
 </html>
